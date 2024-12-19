@@ -108,7 +108,7 @@ public class UserRepository {
         } finally {
             session.close();
         }
-        return Optional.empty();
+        return Optional.ofNullable(session.get(User.class, userId));
     }
 
     /**
@@ -153,6 +153,6 @@ public class UserRepository {
         } finally {
             session.close();
         }
-        return Optional.empty();
+        return Optional.ofNullable(session.get(User.class, login));
     }
 }
