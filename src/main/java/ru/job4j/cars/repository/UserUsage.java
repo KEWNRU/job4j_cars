@@ -32,7 +32,9 @@ public class UserUsage {
             userRepository.delete(user.getId());
             userRepository.findAllOrderById()
                     .forEach(System.out::println);
+            userRepository.deleteAllUser();
         } finally {
+
             StandardServiceRegistryBuilder.destroy(registry);
         }
     }
